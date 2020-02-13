@@ -1,0 +1,30 @@
+{
+  "name": "caymanbeaches",
+  "version": "1.0.0",
+  "description": "POI web app to locate and review beaches in Cayman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gracesfinn/CaymanBeaches.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gracesfinn/CaymanBeaches/issues"
+  },
+  "homepage": "https://github.com/gracesfinn/CaymanBeaches#readme",
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "inert": "^5.1.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120
+  }
+}
