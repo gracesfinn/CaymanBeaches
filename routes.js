@@ -10,4 +10,6 @@ module.exports = [
                 path:'./public'
             }
         }
-    }];
+    },
+    { method: 'GET', path: '/signup', config: Reviews.signup },
+    { method: 'GET', path: '/login', config: Reviews.login },];
