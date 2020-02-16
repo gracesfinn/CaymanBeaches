@@ -1,19 +1,23 @@
 'use strict';
 
 const Reviews = {
-    index: {
+    home: {
         handler: function(request, h) {
-            return h.file('./app/views/main.html');
+            return h.view('home', { title: 'Write a Review' });
         }
     },
-    signup: {
+    report: {
         handler: function(request, h) {
-            return h.file('./app/views/signup.html');
+            return h.view('report', { title: 'Reviews so far' });
         }
     },
-    login: {
+    review: {
         handler: function(request, h) {
-            return h.file('./app/views/login.html');
+            const data = request.payload;
+            var reviewerEmail = request.auth.credentials.id;
+            data.reviewer = this.users[reviewerEmail];
+            this.reviews.push(data);
+            return h.redirect('/report');
         }
     }
 };
