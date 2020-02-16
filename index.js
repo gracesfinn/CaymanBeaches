@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 const Hapi = require('@hapi/hapi');
 
 const server = Hapi.server({
@@ -29,8 +31,8 @@ async function init() {
 
     server.auth.strategy('session', 'cookie', {
         cookie: {
-            name: 'donation',
-            password: 'password-should-be-32-characters',
+            name: process.env.cookie_name,
+            password: process.env.cookie_password,
             isSecure: false
         },
         redirectTo: '/',
@@ -47,9 +49,6 @@ process.on('unhandledRejection', err => {
     process.exit(1);
 });
 
-server.bind({
-    users: {},
-    reviews: [],
-});
+require('./app/models/db');
 
 init();

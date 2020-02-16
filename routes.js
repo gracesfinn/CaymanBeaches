@@ -14,6 +14,10 @@ module.exports = [
 
     { method: 'GET', path: '/home', config: Reviews.home },
     { method: 'GET', path: '/report', config: Reviews.report },
+
+    { method: 'GET', path: '/settings', config: Accounts.showSettings },
+    { method: 'POST', path: '/settings', config: Accounts.updateSettings },
+
     {
         method:'GET',
         path:'/{param*}',
