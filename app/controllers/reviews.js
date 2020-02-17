@@ -1,5 +1,8 @@
 'use strict';
 
+const Reviewed = require('../models/reviewed');
+const User = require('../models/user');
+
 const Reviews = {
     home: {
         handler: function(request, h) {
@@ -7,16 +10,25 @@ const Reviews = {
         }
     },
     report: {
-        handler: function(request, h) {
-            return h.view('report', { title: 'Reviews so far' });
+        handler: async function (request, h) {
+            const reviews = await Reviewed.find().populate('reviewer').lean();
+            return h.view('report', {
+                title: 'Reviews so far',
+                reviews: reviews
+            });
         }
     },
     review: {
-        handler: function(request, h) {
+        handler:  async function(request, h) {
+            const id = request.auth.credentials.id;
+            const user = await User.findById(id);
             const data = request.payload;
-            var reviewerEmail = request.auth.credentials.id;
-            data.reviewer = this.users[reviewerEmail];
-            this.reviews.push(data);
+            const newReview = new Reviewed({
+                amount: data.amount,
+                method: data.method,
+                reviewer:user._id
+            });
+            await newReview.save();
             return h.redirect('/report');
         }
     }
