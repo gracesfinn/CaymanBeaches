@@ -2,6 +2,7 @@
 
 const Accounts = require('./app/controllers/accounts');
 const Reviews = require('./app/controllers/reviews');
+const Beaches = require('./app/controllers/beaches');
 
 module.exports = [
     { method: 'GET', path: '/', config: Accounts.index },
@@ -11,6 +12,7 @@ module.exports = [
     { method: 'POST', path: '/signup', config: Accounts.signup },
     { method: 'POST', path: '/login', config: Accounts.login },
     { method: 'POST', path: '/review', config: Reviews.review },
+    { method: 'POST', path:  '/beach', config: Beaches.create },
 
     { method: 'GET', path: '/home', config: Reviews.home },
     { method: 'GET', path: '/report', config: Reviews.report },

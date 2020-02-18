@@ -1,0 +1,32 @@
+<section class="ui raised segment">
+    <div class="ui stacked segment">
+
+        <form action="/beach" method="POST">
+            <div class="ui form">
+                <div class="field" >
+                    <label>Name of Beach</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea name="description" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <label>Category</label>
+                    <select multiple="" name= "categories" class="ui dropdown">
+                        <option value="A">Swimming</option>
+                        <option value="B">Sun Bathing</option>
+                        <option value="C">Snorkeling</option>
+                        <option value="D">Water Sports</option>
+                        <option value="E">Dining</option>
+                        <option value="F">Family Friendly</option>
+                        <option value="G">Dog Friendly</option>
+                    </select>
+                </div>
+            </div>
+            <button class="ui yellow submit button">Add</button>
+        </form>
+    </div>
+</section>
