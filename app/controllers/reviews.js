@@ -24,8 +24,8 @@ const Reviews = {
             const user = await User.findById(id);
             const data = request.payload;
             const newReview = new Reviewed({
-                amount: data.amount,
-                method: data.method,
+                location: data.location,
+                rating: data.rating,
                 reviewer:user._id
             });
             await newReview.save();
