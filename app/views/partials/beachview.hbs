@@ -13,15 +13,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                {{#each beaches}}
-                    <tr>
 
-                        <td> <a href="/beaches/{{_id}}">{{name}}</a> </td>
-                        <td> {{description}} </td>
-                        <td> {{categories}} </td>
-                        <td> {{reviewer.firstName}} {{reviewer.lastName}} </td>
+                    <tr>
+                        <td> {{beach.name}} </td>
+                        <td> {{beach.description}} </td>
+                        <td> {{beach.categories}} </td>
+
                     </tr>
-                {{/each}}
+                <img src="{{beach.imageMain}}">
+
                 </tbody>
             </table>
         </article>

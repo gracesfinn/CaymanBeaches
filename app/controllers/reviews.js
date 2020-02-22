@@ -21,7 +21,7 @@ const Reviews = {
     review: {
         handler:  async function(request, h) {
             const id = request.auth.credentials.id;
-            const user = await User.findById(id);
+            const user = await User.findById(id).lean();
             const data = request.payload;
             const newReview = new Reviewed({
                 location: data.location,

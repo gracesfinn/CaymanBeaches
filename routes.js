@@ -15,7 +15,8 @@ module.exports = [
     { method: 'POST', path:  '/beach', config: Beaches.create },
 
     { method: 'GET', path: '/home', config: Reviews.home },
-    { method: 'GET', path: '/report', config: Reviews.report },
+    { method: 'GET', path: '/report', config: Beaches.showBeaches },
+    { method: 'GET', path: '/beaches/{id}', config: Beaches.selectedBeach },
 
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
