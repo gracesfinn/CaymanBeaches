@@ -2,6 +2,8 @@
 
 require('dotenv').config();
 
+
+
 const Hapi = require('@hapi/hapi');
 
 const server = Hapi.server({
@@ -9,7 +11,7 @@ const server = Hapi.server({
     host: 'localhost'
 });
 
-
+server.validator(require('@hapi/joi'))
 
 async function init() {
     await server.register(require('@hapi/cookie'));
