@@ -11,6 +11,7 @@ const Beaches = {
       const data = request.payload;
       const newBeach = new Beach({
         name: data.name,
+        location: data.location,
         description: data.description,
         categories: data.categories,
         creator: user._id

@@ -7,13 +7,15 @@
                     <label>Name of Beach</label>
                     <input type="text" name="name">
                 </div>
+                <div class="field" >
+                    <label>Location</label>
+                    <input type="text" name="location" placeholder="Latitudie and Longitude">
+                </div>
                 <div class="field">
                     <label>Description</label>
-                    <textarea name="description" rows="2"></textarea>
+                    <textarea name="description" rows="2" placeholder="Max 20 words"></textarea>
                 </div>
-            </div>
-            <div class="ui form">
-                <div class="field">
+                <div class="field" >
                     <label>Category</label>
                     <select multiple="" name= "categories" class="ui dropdown">
                         <option value="Swimming">Swimming</option>
@@ -25,10 +27,16 @@
                         <option value="Dog Friendly">Dog Friendly</option>
                     </select>
                 </div>
-            </div>
+
             <button class="ui yellow submit button">Add</button>
+            </div>
         </form>
+    </div>
+<div class="ui stacked segment">
+    <h4>Image Uploader</h4>
         <button id="upload_widget" class="cloudinary-button">Upload files</button>
+</div>
+</section>
 
         <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
