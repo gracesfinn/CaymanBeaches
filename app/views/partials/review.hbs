@@ -1,11 +1,13 @@
-<section class="ui raised segment">
-    <div class="ui grid ">
-        <div class="ui form six wide column">
-            <div class="ui stacked segment">
+
+    <div class="ui teal inverted segment">
+        <div class="ui inverted form">
+            <div class="two fields">
+
+
                 <form action="/review" method="POST">
-                    <div class="ui icon input">
-                    <input type="text" name="location" placeholder="Search...">
-                    <i class="circular search link icon"></i>
+                    <div class="field">
+                        <h2 class="ui white header">Review {{beach.name}}</h2>
+
                 </div>
                     <div class="grouped inline fields">
                         <div class="field">
@@ -49,8 +51,5 @@
                 </form>
             </div>
         </div>
-        <aside class="six wide column">
-            <img src="./images/beach1.jpg" class="ui fluid rounded image">
-        </aside>
     </div>
 </section>
