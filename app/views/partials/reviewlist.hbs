@@ -11,18 +11,13 @@
                 <tr>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>Category</th>
                 </tr>
                 </thead>
                 <tbody>
                 {{#each beaches}}
                     <tr>
-
                         <td> <a href="/beaches/{{_id}}">{{name}}</a> </td>
                         <td> {{description}} </td>
-                        <td> {{categories}} </td>
-                        <td> {{reviewer.firstName}} {{reviewer.lastName}} </td>
-                    </tr>
                 {{/each}}
                 </tbody>
             </table>

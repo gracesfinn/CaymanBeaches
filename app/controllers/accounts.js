@@ -14,7 +14,7 @@ const Accounts = {
     showSignup: {
         auth: false,
         handler: function(request, h) {
-            return h.view('signup', { title: 'Sign up for Reviews' });
+            return h.view('signup', { title: 'Sign up' });
         }
     },
     signup: {
@@ -99,9 +99,13 @@ const Accounts = {
                     const message = 'Email address is not registered';
                     throw Boom.unauthorized(message);
                 }
+                else if (user= "admin"){
+                    request.cookieAuth.set({ id: user.id });
+                    return h.redirect('/home');
+                }
                 user.comparePassword(password);
                 request.cookieAuth.set({ id: user.id });
-                return h.redirect('/home');
+                return h.redirect('/beach');
             } catch (err) {
                 return h.view('login', { errors: [{ message: err.message }] });
             }

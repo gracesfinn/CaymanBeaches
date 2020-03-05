@@ -1,24 +1,25 @@
+{{>adminmenu}}
 <section class="ui raised segment">
     <div class="ui stacked segment">
-        <h3>Add a New Beach</h3>
+        <h3>Update Beach</h3>
 
-        <form action="/beach" method="POST">
+        <form action="/update" method="POST">
             <div class="ui form">
                 <div class="field" >
                     <label>Name of Beach</label>
-                    <input type="text" name="name">
+                    <input value="{{beach.name}}" type="text" name="name">
                 </div>
                 <div class="field" >
                     <label>Location</label>
-                    <input type="text" name="location" placeholder="Latitudie and Longitude">
+                    <input value="{{beach.location}}"type="text" name="location" placeholder="Latitudie and Longitude">
                 </div>
                 <div class="field">
                     <label>Description</label>
-                    <textarea name="description" rows="2" placeholder="Max 20 words"></textarea>
+                    <textarea value="{{beach.description}}"name="description" rows="2" placeholder="Max 20 words"></textarea>
                 </div>
                 <div class="field" >
                     <label>Category</label>
-                    <select multiple="" name= "categories" class="ui dropdown">
+                    <select value="{{beach.categories}}"multiple="" name= "categories" class="ui dropdown">
                         <option value="Swimming">Swimming</option>
                         <option value="Sun Bathing">Sun Bathing</option>
                         <option value="Snorkeling">Snorkeling</option>
@@ -29,10 +30,9 @@
                     </select>
                 </div>
 
-            <button class="ui yellow submit button">Add</button>
+                <button class="ui yellow submit button">Add</button>
             </div>
         </form>
     </div>
 
 </section>
-

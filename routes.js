@@ -4,6 +4,7 @@ const Accounts = require('./app/controllers/accounts');
 const Reviews = require('./app/controllers/reviews');
 const Beaches = require('./app/controllers/beaches');
 
+
 module.exports = [
     { method: 'GET', path: '/', config: Accounts.index },
     { method: 'GET', path: '/signup', config: Accounts.showSignup },
@@ -14,12 +15,21 @@ module.exports = [
     { method: 'POST', path: '/review', config: Reviews.review },
     { method: 'POST', path:  '/beach', config: Beaches.create },
 
-    { method: 'GET', path: '/home', config: Reviews.home },
+    //{ method: 'GET', path: '/home', config: Reviews.home },
+    { method: 'GET', path: '/home', config: Beaches.showBeaches },
     { method: 'GET', path: '/report', config: Beaches.showBeaches },
+
+    { method: 'GET', path: '/update', config: Beaches.showUpdate},
+    { method: 'POST', path: '/update', config: Beaches.updateBeach },
+
+    { method: 'GET', path: '/image', config: Beaches.create },
     { method: 'GET', path: '/beaches/{id}', config: Beaches.selectedBeach },
+
 
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
+
+
 
     {
         method:'GET',

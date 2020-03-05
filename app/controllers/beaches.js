@@ -13,8 +13,7 @@ const Beaches = {
         name: data.name,
         location: data.location,
         description: data.description,
-        categories: data.categories,
-        creator: user._id
+        categories: data.categories
       });
       await newBeach.save();
       return h.redirect('/report');
@@ -40,7 +39,36 @@ const Beaches = {
         beach: beach
       });
     }
+  },
+  showUpdate:{
+    auth: false,
+    handler: function(request, h) {
+      return h.view('update', { title: 'Update Beach' });
+    }
+  },
+
+  updateBeach: {
+    handler: async function(request, h) {
+      try {
+        const beachEdit = request.payload;
+        const id = request.auth.credentials.id;
+        const beach = await Beaches.find(name);
+        beach.name = beachEdit.name;
+        beach.loction = beachEdit.location;
+        beach.descripton = beachEdit.description;
+        beach.categories = beachEdit.categories;
+        await beach.save();
+        return h.redirect('/report');
+      }catch (err) {
+        return h.view('home', { errors: [{ message: err.message }] });
+      }
+    },
+
+    deleteBeach:{
+
+    }
   }
+
 };
 
 module.exports = Beaches;
