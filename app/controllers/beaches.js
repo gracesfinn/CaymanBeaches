@@ -13,7 +13,8 @@ const Beaches = {
         name: data.name,
         location: data.location,
         description: data.description,
-        categories: data.categories
+        categories: data.categories,
+        imageMain: data.imageMain
       });
       await newBeach.save();
       return h.redirect('/report');
@@ -37,10 +38,12 @@ const Beaches = {
   showAdminBeaches:{
     handler: async function(request, h) {
       const beaches = await Beach.find().lean();
+      const user = await User.find().lean();
       console.log(beaches);
       return h.view("report",{
         title: 'beaches',
-        beaches: beaches
+        beaches: beaches,
+        user: user
       });
     }
   },

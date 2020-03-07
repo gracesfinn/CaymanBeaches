@@ -166,6 +166,15 @@ const Accounts = {
                 return h.view('main', { errors: [{ message: err.message }] });
             }
         }
+    },
+
+    deleteUser:{
+        handler: async function(request, h) {
+            const id = request.params.id;
+            const beach = await User.findById(id).lean();
+            await User.removeUser(id);
+            return h.redirect('/report');
+        }
     }
 
 };

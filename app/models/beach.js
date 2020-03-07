@@ -8,7 +8,8 @@ const beachSchema = new Schema({
   location: String,
   description: String,
   categories: [String],
-  creator: String
+  creator: String,
+  imageMain: String
 });
 
 beachSchema.statics.removeBeach = function(id){

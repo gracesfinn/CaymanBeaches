@@ -23,6 +23,8 @@ module.exports = [
     { method: 'POST', path: '/update/{id}', config: Beaches.updateBeach},
     { method: 'GET', path: '/update/delete/{id}', config: Beaches.deleteBeach},
 
+    { method: 'GET', path: '/user/delete/{id}', config: Accounts.deleteUser},
+
 
     { method: 'GET', path: '/image', config: Beaches.create },
     { method: 'GET', path: '/beaches/{id}', config: Beaches.selectedBeach },

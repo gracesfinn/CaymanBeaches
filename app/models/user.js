@@ -21,4 +21,10 @@ userSchema.methods.comparePassword = function(candidatePassword) {
     return this;
 };
 
+userSchema.statics.removeUser = function(id){
+    return this.findOneAndRemove({
+        "_id":id
+    });
+};
+
 module.exports = Mongoose.model('User', userSchema);
