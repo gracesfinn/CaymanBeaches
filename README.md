@@ -3,7 +3,7 @@
 ![picture alt](https://res.cloudinary.com/gracesfinn/image/upload/v1582380553/F03CC176-500E-499F-A6FD-AB4A743CF36E_kaw58o.jpg)
 
 
-This app allows users to
+This app allows **users** to
 
 - [x] sign up,
 - [x] log on and 
@@ -12,7 +12,7 @@ This app allows users to
 the most popular beaches in Grand Cayman. 
 - [ ] Future functions will allow users to comment and rate the different beaches the have visited. 
 
-The Admin account for the app has the ability to do the follow to the beaches collection in the database:
+The **Admin** account for the app has the ability to do the follow to the beaches collection in the database:
 - [x] Add
 - [x] Update
 - [x] Delete 
