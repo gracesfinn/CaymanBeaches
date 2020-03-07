@@ -11,4 +11,10 @@ const beachSchema = new Schema({
   creator: String
 });
 
+beachSchema.statics.removeBeach = function(id){
+  return this.findOneAndRemove({
+    "_id":id
+  });
+};
+
 module.exports = Mongoose.model('Beach', beachSchema);

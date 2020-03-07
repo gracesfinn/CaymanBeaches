@@ -23,6 +23,21 @@ const Beaches = {
     handler: async function(request, h) {
       const beaches = await Beach.find().lean();
       console.log(beaches);
+      const id = request.auth.credentials.id;
+      const user = await User.findById(id).lean();
+      if (user.email === "admin@caymanbeaches.com"){
+        return h.redirect('/report');
+      }
+      return h.view("home",{
+        title: 'beaches',
+        beaches: beaches
+      });
+    }
+  },
+  showAdminBeaches:{
+    handler: async function(request, h) {
+      const beaches = await Beach.find().lean();
+      console.log(beaches);
       return h.view("report",{
         title: 'beaches',
         beaches: beaches
@@ -41,9 +56,10 @@ const Beaches = {
     }
   },
   showUpdate:{
-    auth: false,
-    handler: function(request, h) {
-      return h.view('update', { title: 'Update Beach' });
+    handler: async function(request, h) {
+      const id = request.params.id;
+      const beach = await Beach.findById(id).lean();
+      return h.view('update', { title: 'Update Beach', beach:beach });
     }
   },
 
@@ -51,25 +67,29 @@ const Beaches = {
     handler: async function(request, h) {
       try {
         const beachEdit = request.payload;
-        const id = request.auth.credentials.id;
-        const beach = await Beaches.find(name);
+        const id = request.params.id;
+        const beach = await Beach.findById(id);
         beach.name = beachEdit.name;
-        beach.loction = beachEdit.location;
-        beach.descripton = beachEdit.description;
+        beach.location = beachEdit.location;
+        beach.description = beachEdit.description;
         beach.categories = beachEdit.categories;
         await beach.save();
         return h.redirect('/report');
       }catch (err) {
-        return h.view('home', { errors: [{ message: err.message }] });
+        return h.view('main', { errors: [{ message: err.message }] });
       }
-    },
-
-    deleteBeach:{
-
+    }
+  },
+  deleteBeach:{
+    handler: async function(request, h) {
+      const id = request.params.id;
+      const beach = await Beach.findById(id).lean();
+      await Beach.removeBeach(id);
+      return h.redirect('/report');
     }
   }
-
 };
+
 
 module.exports = Beaches;
 

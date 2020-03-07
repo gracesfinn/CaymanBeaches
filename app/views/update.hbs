@@ -1,9 +1,8 @@
-{{>adminmenu}}
+{{> mainmenu}}
 <section class="ui raised segment">
     <div class="ui stacked segment">
         <h3>Update Beach</h3>
-
-        <form action="/update" method="POST">
+        <form action="/update/{{beach._id}}" method="POST">
             <div class="ui form">
                 <div class="field" >
                     <label>Name of Beach</label>

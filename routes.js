@@ -17,10 +17,12 @@ module.exports = [
 
     //{ method: 'GET', path: '/home', config: Reviews.home },
     { method: 'GET', path: '/home', config: Beaches.showBeaches },
-    { method: 'GET', path: '/report', config: Beaches.showBeaches },
+    { method: 'GET', path: '/report', config: Beaches.showAdminBeaches },
 
-    { method: 'GET', path: '/update', config: Beaches.showUpdate},
-    { method: 'POST', path: '/update', config: Beaches.updateBeach },
+    { method: 'GET', path: '/update/{id}', config: Beaches.showUpdate},
+    { method: 'POST', path: '/update/{id}', config: Beaches.updateBeach},
+    { method: 'GET', path: '/update/delete/{id}', config: Beaches.deleteBeach},
+
 
     { method: 'GET', path: '/image', config: Beaches.create },
     { method: 'GET', path: '/beaches/{id}', config: Beaches.selectedBeach },
