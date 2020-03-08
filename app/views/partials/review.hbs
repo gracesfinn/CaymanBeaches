@@ -1,0 +1,55 @@
+
+    <div class="ui teal inverted segment">
+        <div class="ui inverted form">
+            <div class="two fields">
+
+
+                <form action="/review" method="POST">
+                    <div class="field">
+                        <h2 class="ui white header">Review {{beach.name}}</h2>
+
+                </div>
+                    <div class="grouped inline fields">
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="rating" value="1star">
+                                <label>1 Star</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="rating" value="2star">
+                                <label>2 Star</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="rating" value="3star">
+                                <label>3 Star</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="rating" value="4star">
+                                <label>4 Star</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="rating" value="5star">
+                                <label>5 Star</label>
+                            </div>
+                        </div>
+                        <div class="ui form">
+                            <div class="field">
+                                <label>Comment</label>
+                                <textarea></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="ui yellow submit button">Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

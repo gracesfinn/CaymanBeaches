@@ -1,0 +1,57 @@
+
+{{#each beaches}}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<section class="ui raised segment">
+
+    <div class="ui grid">
+        <aside class="six wide column">
+
+
+            <img src="{{imageMain}}" class="ui large rounded image">
+            <div class="w3-display-topmiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                <h4><b><a href="/beaches/{{_id}}">{{name}}</a></b> </h4>
+
+            </div>
+        </aside>
+        <article class="eight wide column">
+
+            <table class="ui very basic collapsing celled table">
+                <tbody>
+                <tr>
+                    <td>
+                        <h4  class="item">
+                            <i class="thumbtack icon"></i>
+                        </h4>
+                    </td>
+                    <td>
+                        {{location}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4  class="item">
+                            <i class="info circle icon centered"></i>
+                        </h4>
+                    </td>
+                    <td>
+                        {{description}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4  class="item">
+                            <i class="umbrella beach icon"></i>
+                        </h4>
+                    </td>
+                    <td>
+                        {{categories}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>
+
+
+    {{/each}}

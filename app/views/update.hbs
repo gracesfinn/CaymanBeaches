@@ -1,0 +1,39 @@
+{{> mainmenu}}
+<section class="ui raised segment">
+    <div class="ui stacked segment">
+        <h3>Update Beach</h3>
+        <form action="/update/{{beach._id}}" method="POST">
+            <div class="ui form">
+                <div class="field" >
+                    <label>Name of Beach</label>
+                    <input value="{{beach.name}}" type="text" name="name">
+                </div>
+                <div class="field" >
+                    <label>Location</label>
+                    <input value="{{beach.location}}"type="text" name="location" placeholder="Latitudie and Longitude">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea value="{{beach.description}}"name="description" rows="2" placeholder="Max 20 words"></textarea>
+                </div>
+                <div class="field" >
+                    <label>Category</label>
+                    <select value="{{beach.categories}}"multiple="" name= "categories" class="ui dropdown">
+                        <option value="Swimming">Swimming</option>
+                        <option value="Sun Bathing">Sun Bathing</option>
+                        <option value="Snorkeling">Snorkeling</option>
+                        <option value="Water Sports">Water Sports</option>
+                        <option value="Dining">Dining</option>
+                        <option value="Family Friendly">Family Friendly</option>
+                        <option value="Dog Friendly">Dog Friendly</option>
+                    </select>
+                </div>
+
+                <button class="ui yellow submit button">Add</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+{{> footer}}

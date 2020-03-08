@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<header class="w3-display-container w3-content" style="max-width:1500px;">
+    <img class="w3-image" src="{{beach.imageMain}}" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
+    <div class="w3-display-left w3-padding w3-col l6 m8">
+        <div class="w3-container w3-teal">
+            <h2>{{beach.name}} </h2>
+        </div>
+        <div class="w3-container w3-white w3-padding-16">
+            <h4>{{beach.description}}</h4>
+            <h4><b>Activities</b></h4>
+            <h4> {{beach.categories}}</h4>
+
+        <form>
+            <div class="ui form">
+                <h4><b>Rate and Review</b></h4>
+            {{> ratings}}
+
+            <div class="field">
+                <label><h4><b>Comment</b></h4></label>
+                <textarea rows="2"></textarea>
+            </div>
+
+
+    <button class="ui yellow submit button">Review</button>
+    </form>
+        </div>
+        </div>
+    </div>
+</header>

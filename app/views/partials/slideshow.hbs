@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="mySlides w3-display-container w3-center">
+    <img src="./images/beach1.jpg" style="width:100%">
+    <div class="w3-display-topmiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+        <h3>Seven Mile Beach</h3>
+        <p><b>"White Sandy Paradise!"</b></p>
+    </div>
+</div>
+<div class="mySlides w3-display-container w3-center">
+    <img src="./images/beach2.jpg" style="width:100%">
+    <div class="w3-display-topmiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+        <h3>Smiths Barcadere</h3>
+        <p><b>"Local Low Key Beautiful Spot!"</b></p>
+    </div>
+</div>
+<div class="mySlides w3-display-container w3-center">
+    <img src="./images/beach3.jpg" style="width:100%">
+    <div class="w3-display-topmiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+        <h3>Rum Point</h3>
+        <p><b>"Cool spot and Island vibes - Best Mud Slides"</b></p>
+    </div>
+</div>
+<script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 4000);
+    }
+</script>

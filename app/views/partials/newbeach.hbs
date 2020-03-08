@@ -1,0 +1,66 @@
+<section class="ui raised segment">
+    <div class="ui stacked segment">
+        <h3>Add a New Beach</h3>
+
+        <form action="/beach" method="POST">
+            <div class="ui form">
+                <div class="field" >
+                    <label>Name of Beach</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="field" >
+                    <label>Location</label>
+                    <input type="text" name="location" placeholder="Latitudie and Longitude">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea name="description" rows="2" placeholder="Max 20 words"></textarea>
+                </div>
+                <div class="field" >
+                    <label>Category</label>
+                    <select multiple="" name= "categories" class="ui dropdown">
+                        <option value="Swimming">Swimming</option>
+                        <option value="Sun Bathing">Sun Bathing</option>
+                        <option value="Snorkeling">Snorkeling</option>
+                        <option value="Water Sports">Water Sports</option>
+                        <option value="Dining">Dining</option>
+                        <option value="Family Friendly">Family Friendly</option>
+                        <option value="Dog Friendly">Dog Friendly</option>
+                    </select>
+                </div>
+                <section class="ui raised segment">
+                    <div class="ui stacked segment">
+                        <h4>Image Uploader</h4>
+                        <h1 class="ui header">{{beach.name}}</h1>
+                        <input type="hidden" id="image" name="imageMain" value="none">
+                        <button id="upload_widget" class="cloudinary-button" onclick="return false">Upload files</button>
+
+                        <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+                        <script type="text/javascript">
+                            var myWidget = cloudinary.createUploadWidget({
+                                        cloudName: 'gracesfinn',
+                                        uploadPreset: 'newBeach'}, (error, result) => {
+                                        if (!error && result && result.event === "success") {
+                                            var imageURL = result.info.secure_url;
+                                            document.getElementById("image").value=imageURL;
+                                        }
+                                    }
+                            )
+
+                            document.getElementById("upload_widget").addEventListener("click", function(){
+                                myWidget.open();
+                            }, false);
+                        </script>
+                    </div>
+                </section>
+
+            <button class="ui yellow submit button">Add</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
