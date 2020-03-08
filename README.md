@@ -18,11 +18,17 @@ The **Admin** account for the app has the ability to do the follow to the beache
 - [x] Add with image
 - [x] Update
 - [x] Delete 
+- [ ] Future feauters will also include a Map View showing the loacations of the beaches. 
 
 Admin also has the abiliy to:
 - [x] View all registered users
 - [x] Delete users
 
-- [ ] Future feauters will also include a Map View showing the loacations of the beaches. 
+- - - -
+
+## To Clone ##
+
+`git clone:https://github.com/gracesfinn/CaymanBeaches.git`
+
 
 
