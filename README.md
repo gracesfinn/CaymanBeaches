@@ -15,8 +15,14 @@ the most popular beaches in Grand Cayman.
  - - - -
  
 The **Admin** account for the app has the ability to do the follow to the beaches collection in the database:
-- [x] Add
+- [x] Add with image
 - [x] Update
 - [x] Delete 
 
+Admin also has the abiliy to:
+- [x] View all registered users
+- [x] Delete users
+
 - [ ] Future feauters will also include a Map View showing the loacations of the beaches. 
+
+
