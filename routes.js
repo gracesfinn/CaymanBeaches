@@ -44,5 +44,12 @@ module.exports = [
             }
         },
         options:{auth:false}
+    },
+    {
+        method: 'GET',
+        path: '/welcome/{user}',
+        handler: function (request, reply) {
+            return 'Welcome ' + request.params.user;
+        }
     }
     ];

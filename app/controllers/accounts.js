@@ -3,6 +3,9 @@
 const User = require('../models/user');
 const Boom = require('@hapi/boom');
 const Joi = require('@hapi/joi');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 const Accounts = {
     index: {
@@ -21,12 +24,14 @@ const Accounts = {
         auth: false,
         validate: {
             payload: {
-                firstName: Joi.string().required(),
-                lastName: Joi.string().required(),
-                email: Joi.string()
-                  .email()
-                  .required(),
-                password: Joi.string().required()
+                // begin with upper case letter and then 2+ lower case letters
+                firstName: Joi.string().regex(/^[A-Z][a-z]{2,}$/),
+
+                // begin with upper case letter, then any 2+ characters
+                lastName: Joi.string().regex(/^[A-Z]/).min(3),
+                email: Joi.string().email().required(),
+
+                password: Joi.string().min(8)               // min 8 characters
             },
             options: {
                 abortEarly: false
@@ -49,11 +54,13 @@ const Accounts = {
                     const message = 'Email address is already registered';
                     throw Boom.badData(message);
                 }
+                const hash = await bcrypt.hash(payload.password, saltRounds);    // ADDED
+
                 const newUser = new User({
                     firstName: payload.firstName,
                     lastName: payload.lastName,
                     email: payload.email,
-                    password: payload.password
+                    password: hash
                 });
                 user = await newUser.save();
                 request.cookieAuth.set({ id: user.id });
@@ -103,9 +110,13 @@ const Accounts = {
                     request.cookieAuth.set({ id: user.id });
                     return h.redirect('/report');
                 }
-                user.comparePassword(password);
-                request.cookieAuth.set({ id: user.id });
-                return h.redirect('/home');
+                if (!await user.comparePassword(password)) {         // EDITED (next few lines)
+                    const message = 'Password mismatch';
+                    throw Boom.unauthorized(message);
+                } else {
+                    request.cookieAuth.set({ id: user.id });
+                    return h.redirect('/home');
+                }                                                    // END OF EDITED PART
             } catch (err) {
                 return h.view('login', { errors: [{ message: err.message }] });
             }
@@ -151,15 +162,18 @@ const Accounts = {
                   .code(400);
             }
         },
+
         handler: async function(request, h) {
             try {
+
                 const userEdit = request.payload;
                 const id = request.auth.credentials.id;
                 const user = await User.findById(id);
+                const hash = await bcrypt.hash(userEdit.password, saltRounds);
                 user.firstName = userEdit.firstName;
                 user.lastName = userEdit.lastName;
                 user.email = userEdit.email;
-                user.password = userEdit.password;
+                user.password = hash                            //User can edit their password safely
                 await user.save();
                 return h.redirect('/settings');
             }catch (err) {
