@@ -3,6 +3,7 @@
 const Beach = require('../models/beach');
 const User = require('../models/user');
 
+
 const Beaches = {
   create: {
     handler: async function(request, h) {
