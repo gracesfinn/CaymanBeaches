@@ -15,26 +15,26 @@ const Beaches = {
   findOne: {
     auth: false,
     handler: async function(request, h) {
-      try {
-        const beaches = await Beach.findOne({ _id: request.params.id });
-        if (!beaches) {
-          return Boom.notFound('No Beach with this id');
-        }
-        return candidate;
-      } catch (err) {
-        return Boom.notFound('No Candidate with this id');
+      try{
+      const beach = await Beach.findOne({ _id: request.params.id });
+      if (!beach) {
+        return Boom.notFound('No Beach with this id');
       }
+      return beach;
+    } catch(err) {
+      return Boom.notFound('No Beach with this id');
     }
+  }
   },
   create: {
     auth: false,
     handler: async function(request, h) {
-      const newBeach = new Candidate(request.payload);
+      const newBeach = new Beach(request.payload);
       const beach = await newBeach.save();
       if (beach) {
         return h.response(beach).code(201);
       }
-      return Boom.badImplementation('error creating candidate');
+      return Boom.badImplementation('error creating beach');
     }
   },
   deleteAll: {

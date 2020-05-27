@@ -1,25 +1,4 @@
 {
-  "donationService": "http://localhost:3000",
-  "users": [
-    {
-      "firstName": "Homer",
-      "lastName": "Simpson",
-      "email": "homer@simpson.com",
-      "password": "secret"
-    },
-    {
-      "firstName": "Marge",
-      "lastName": "Simpson",
-      "email": "marge@simpson.com",
-      "password": "secret"
-    },
-    {
-      "firstName": "Bart",
-      "lastName": "Simpson",
-      "email": "bart@simpson.com",
-      "password": "secret"
-    }
-  ],
   "beaches": [
     {
       "categories": [
@@ -29,12 +8,11 @@
         "Dining",
         "Family Friendly"
       ],
-      "_id": "5e5e9e4aeb0b034a40bed62c",
       "name": "Seven Mile Beach",
       "location": "19.3339° N, 81.3817° W",
       "description": "Situated on Grand Cayman’s west shore, Seven Mile Beach actually now measures only 5.5 miles. But its gorgeous clear waters and coral sands still lure visitors from around the world. ",
       "creator": "5e54791497742c3e5c20eb59",
-      "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1582380553/F03CC176-500E-499F-A6FD-AB4A743CF36E_kaw58o.jpg",
+      "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1582380553/F03CC176-500E-499F-A6FD-AB4A743CF36E_kaw58o.jpg"
     },
     {
       "categories": [
@@ -42,12 +20,11 @@
         "Dining",
         "Family Friendly"
       ],
-      "_id": "5e5ea2ee6efe57413cbaafc5",
       "name": "Rum Point",
       "location": "19.3637° N, 81.2608° W",
       "description": "Located on the tranquil North Side of Grand Cayman, Rum Point is the perfect place to chill out. Soft white sand, combined with crystal clear shallow water makes it the perfect destination for families, while couples can grab a shady hammock and relax. ",
       "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1583260793/beach3_qs0cee.jpg",
-      "creator": "5e54791497742c3e5c20eb59",
+      "creator": "5e54791497742c3e5c20eb59"
     },
     {
       "categories": [
@@ -55,27 +32,18 @@
         "Sun Bathing",
         "Family Friendly"
       ],
-      "_id": "5e613a999d075b6c7ce1e487",
       "name": "Public Beach",
       "location": "19.3428° N, 81.3917° W",
       "description": "Public Beach is the largest and most popular beach on Seven Mile Beach with restroom facilities, beach cabanas and watersport options on-site. Located directly next to Calico Jack's beach bar.",
-      "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1583431960/afbdp93d6wh1tbsmoekz.jpg",
+      "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1583431960/afbdp93d6wh1tbsmoekz.jpg"
     }
     ],
-  "newBeach": {
-    "categories": [
-    "Dining"
-  ],
-    "_id": "5e74cf3937b12f0017b86c80",
-   "name": "West Bay",
+
+  "newBeach":
+  {
+    "name": "West Bay",
     "location": "19.3637° N, 81.2608° W",
     "description": "Lovely Beach",
-    "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1584713524/q5l9g0zjub6okk7tcuv6.jpg",
-  },
-  "newUser": {
-    "firstName": "Maggie",
-    "lastName": "Simpson",
-    "email": "maggie@simpson.com",
-    "password": "secret"
+    "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1584713524/q5l9g0zjub6okk7tcuv6.jpg"
   }
 }
