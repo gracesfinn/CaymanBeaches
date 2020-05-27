@@ -36,8 +36,32 @@ class BeachService {
     }
   }
 
+
+  async getBeaches() {
+    const response = await axios.get(this.baseUrl + '/api/beaches');
+    return response.data;
+  }
+
+  async getBeach(id) {
+    try {
+      const response = await axios.get(this.baseUrl + '/api/beaches/' + id);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
   async createBeach(newBeach){
     const response = await axios.post(this.baseUrl + '/api/beaches', newBeach);
+    return response.data;
+  }
+
+  async deleteAllBeaches() {
+    const response = await axios.delete(this.baseUrl + '/api/beaches');
+    return response.data;
+  }
+
+  async deleteOneBeach(id) {
+    const response = await axios.delete(this.baseUrl + '/api/beaches/' + id);
     return response.data;
   }
 

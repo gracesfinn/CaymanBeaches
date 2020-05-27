@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const Beach = require('../models/beach');
 const Boom = require('@hapi/boom');
@@ -55,4 +55,4 @@ const Beaches = {
     }
   }
 };
-module.exports = Beaches;
+module.exports = Beaches
