@@ -36,6 +36,24 @@ class BeachService {
     }
   }
 
+  async deleteAllUsers() {
+    try {
+      const response = await axios.delete(this.baseUrl + '/api/users');
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async deleteOneUser(id) {
+    try {
+      const response = await axios.delete(this.baseUrl + '/api/users/' + id);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
 
   async getBeaches() {
     const response = await axios.get(this.baseUrl + '/api/beaches');
