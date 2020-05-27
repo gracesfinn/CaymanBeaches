@@ -2,7 +2,8 @@
 
 const assert = require('chai').assert;
 const BeachService = require('./beaches-service');
-const fixtures = require('./fixtures.json');
+const fixtures = require('./fixtures.json')
+const _ = require('lodash');
 
 suite('Candidate API tests', function () {
 
@@ -13,9 +14,7 @@ suite('Candidate API tests', function () {
 
   test('create a beach', async function () {
     const returnedBeach = await beachService.createBeach(newBeach);
-    assert.equal(returnedBeach.name, newBeach.name);
-    assert.equal(returnedBeach.location, newBeach.location);
-    assert.equal(returnedBeach.description, newBeach.description);
+    assert(_.some([returnedBeach], newBeach),  'returnedBeach must be a superset of newBeach');
     assert.isDefined(returnedBeach._id);
   });
 });
