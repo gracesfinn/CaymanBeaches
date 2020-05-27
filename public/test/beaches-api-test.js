@@ -12,11 +12,32 @@ suite('Candidate API tests', function () {
 
   const beachService = new BeachService('http://localhost:3000');
 
+  setup(async function () {
+    await beachService.deleteAllBeaches();
+  });
+
+  teardown(async function () {
+    await beachService.deleteAllBeaches();
+  });
+
   test('create a beach', async function () {
     const returnedBeach = await beachService.createBeach(newBeach);
     assert(_.some([returnedBeach], newBeach),  'returnedBeach must be a superset of newBeach');
     assert.isDefined(returnedBeach._id);
   }); //Working
+
+  test('get beach', async function () {
+    const c1 = await beachService.createBeach(newBeach);
+    const c2 = await beachService.getBeach(c1._id);
+    assert.deepEqual(c1, c2);
+  }); //Working
+
+  test('get invalid beach', async function () {
+    const c1 = await beachService.getBeach('1234');
+    assert.isNull(c1);
+    const c2 = await beachService.getBeach('012345678901234567890123');
+    assert.isNull(c2);
+  }); // Working
 
   test('delete a beach', async function () {
     let c = await beachService.createBeach(newBeach);
@@ -24,7 +45,35 @@ suite('Candidate API tests', function () {
     await beachService.deleteOneBeach(c._id);
     c = await beachService.getBeach(c._id);
     assert(c == null);
+  }); //Working
+
+  test('get all candidates', async function () {
+    for (let c of beaches) {
+      await beachService.createBeach(c);
+    }
+
+    const allBeaches = await beachService.getBeaches();
+    assert.equal(allBeaches.length, beaches.length);
   });
+
+  test('get beaches detail', async function () {
+    for (let c of beaches) {
+      await beachService.createBeach(c);
+    }
+
+    const allBeaches = await beachService.getBeaches();
+    for (var i = 0; i < beaches.length; i++) {
+      assert(_.some([allBeaches[i]], beaches[i]), 'returnedBeaches must be a superset of newBeach');
+    }
+  }); // Working
+
+  test('get all beaches empty', async function () {
+    const allBeaches = await beachService.getBeaches();
+    assert.equal(allBeaches.length, 0);
+  }); //Working
+
+
+
 
 
 });
