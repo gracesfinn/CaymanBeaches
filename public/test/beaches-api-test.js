@@ -16,7 +16,17 @@ suite('Candidate API tests', function () {
     const returnedBeach = await beachService.createBeach(newBeach);
     assert(_.some([returnedBeach], newBeach),  'returnedBeach must be a superset of newBeach');
     assert.isDefined(returnedBeach._id);
+  }); //Working
+
+  test('delete a beach', async function () {
+    let c = await beachService.createBeach(newBeach);
+    assert(c._id != null);
+    await beachService.deleteOneBeach(c._id);
+    c = await beachService.getBeach(c._id);
+    assert(c == null);
   });
+
+
 });
 
 
