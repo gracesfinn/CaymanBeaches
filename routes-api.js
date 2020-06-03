@@ -1,5 +1,6 @@
 const Users= require('./app/api/users');
 const Beaches= require('./app/api/beaches-api');
+const CheckIns= require('./app/api/check-in-api');
 
 module.exports = [
   {method: 'GET', path:'/api/beaches', config:Beaches.find},
@@ -13,4 +14,8 @@ module.exports = [
   { method: 'POST', path: '/api/users', config: Users.create },
   { method: 'DELETE', path: '/api/users/{id}', config: Users.deleteOne },
   { method: 'DELETE', path: '/api/users', config: Users.deleteAll },
+
+  { method: 'GET', path: '/api/checkIns', config: CheckIns.findAll },
+
+  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 ];

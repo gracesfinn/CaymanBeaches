@@ -53,6 +53,14 @@ class BeachService {
       return null;
     }
   }
+  async authenticate(user) {
+    try {
+      const response = await axios.post('/api/users/authenticate', user);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
 
 
   async getBeaches() {
@@ -81,6 +89,20 @@ class BeachService {
   async deleteOneBeach(id) {
     const response = await axios.delete(this.baseUrl + '/api/beaches/' + id);
     return response.data;
+  }
+
+  async createCheckIn(newCheckIn){
+    const response = await axios.post(this.baseUrl + '/api/checkIn', newCheckIn);
+    return response.data;
+  }
+
+  async getCheckIns(id){
+    try{
+      const response = await axios.get(this.baseUrl + '/api/beaches/' + id + '/checkIns');
+      return response.data;
+    } catch (e) {
+      return null;
+    }
   }
 
 }

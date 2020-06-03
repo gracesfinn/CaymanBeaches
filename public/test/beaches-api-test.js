@@ -2,7 +2,7 @@
 
 const assert = require('chai').assert;
 const BeachService = require('./beaches-service');
-const fixtures = require('./fixtures.json')
+const fixtures = require('./fixtures.json');
 const _ = require('lodash');
 
 suite('Candidate API tests', function () {
@@ -47,7 +47,7 @@ suite('Candidate API tests', function () {
     assert(c == null);
   }); //Working
 
-  test('get all candidates', async function () {
+  test('get all beaches', async function () {
     for (let c of beaches) {
       await beachService.createBeach(c);
     }

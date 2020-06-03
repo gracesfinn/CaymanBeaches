@@ -1,0 +1,32 @@
+<section class="ui raised segment">
+<form action="/checkIn" method="POST">
+
+        <div class="ui form">
+            <h4><b>Check-In</b></h4>
+
+
+                    <div class="field" >
+                        <label><h4><b>Select Beach</b></h4></label>
+                        <select multiple="" name= "categories" class="ui dropdown">
+                            {{#each beaches}}
+                            <option value="beach"> {{name}} </option>
+                            {{/each}}
+                        </select>
+                    </div>
+            <label><h4><b>Group Size<b></b></h4></label>
+            <div class="ui left icon input">
+                <input type="text" name="groupSize" placeholder="1">
+                <i class="users icon"></i>
+            </div>
+                <div class="grouped inline fields">
+
+                    <div class="field">
+                        <label><h4><b>Comment</b></h4></label>
+                        <textarea name="comment" rows="1" placeholder="Busy/Quiet?" maxlength="200"></textarea>
+                    </div>
+                    <button class="ui yellow submit button">Check In</button>
+                </div>
+            </div>
+        </div>
+</form>
+</section>

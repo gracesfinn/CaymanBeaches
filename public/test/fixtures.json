@@ -72,5 +72,19 @@
     "location": "19.3637° N, 81.2608° W",
     "description": "Lovely Beach",
     "imageMain": "https://res.cloudinary.com/gracesfinn/image/upload/v1584713524/q5l9g0zjub6okk7tcuv6.jpg"
-  }
+  },
+  "checkIns": [
+    {
+      "member": "Marge Simpson",
+      "beach": "Seven Mile Beach",
+      "groupSize": 4,
+      "comment": "Quite busy this morning near Palms, would recommend staying away till 12pm to avoid any crowds."
+    },
+    {
+      "reviewer": "Marge Simpson",
+      "beach": "Smiths Cove",
+      "groupSize": 2,
+      "comment": "Nice an quite today, hardly anyone here. Great to social distance"
+    }
+  ]
 }

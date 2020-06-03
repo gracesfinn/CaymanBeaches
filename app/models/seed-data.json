@@ -26,18 +26,20 @@
       "password": "secretpassword"
     }
   },
-  "reviews": {
-    "_model": "Reviews",
-    "review1":
+  "checkIn": {
+    "_model": "Check-in",
+    "checkIn1":
     {
+      "member": "->users.Marge Simpson",
       "beach": "Seven Mile Beach",
-      "reviewer": "->users.Marge Simpson",
+      "groupSize": 4,
       "comment": "Quite busy this morning near Palms, would recommend staying away till 12pm to avoid any crowds."
     },
-    "review2":
+    "checkIn2":
     {
-      "beach": "Smiths Cove",
       "reviewer": "->users.Marge Simpson",
+      "beach": "Smiths Cove",
+      "groupSize": 2,
       "comment": "Nice an quite today, hardly anyone here. Great to social distance"
     }
   },
