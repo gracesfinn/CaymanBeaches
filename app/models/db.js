@@ -25,9 +25,9 @@ db.once('open', function() {
 async function seed() {
     var seeder = require('mais-mongoose-seeder')(Mongoose);
     const data = require('./seed-data.json');
+    const CheckIns = require('./check-in');
     const Beach = require('./beach');
     const User = require('./user');
-    const CheckIns = require('./check-in.js');
     const dbData = await seeder.seed(data, { dropDatabase: false, dropCollections: true });
     console.log(dbData);
 }

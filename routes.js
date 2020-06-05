@@ -19,7 +19,7 @@ module.exports = [
     { method: 'POST', path: '/checkIn', config: CheckIns.create },
     { method: 'GET', path: '/checkIn', config: CheckIns.showCheckIns},
 
-    //{ method: 'GET', path: '/home', config: Reviews.home },
+
     { method: 'GET', path: '/home', config: Beaches.showBeaches },
     { method: 'GET', path: '/report', config: Beaches.showAdminBeaches },
 

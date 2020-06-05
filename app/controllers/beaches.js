@@ -53,8 +53,8 @@ const Beaches = {
       const id = request.params.id;
       const beach = await Beach.findById(id).lean();
       console.log(beach);
-      return h.view("beach",{
-        title: 'beaches',
+      return h.view("checkIn",{
+        title: 'CheckIn',
         beach: beach
       });
     }

@@ -17,5 +17,4 @@ module.exports = [
 
   { method: 'GET', path: '/api/checkIns', config: CheckIns.findAll },
 
-  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 ];
