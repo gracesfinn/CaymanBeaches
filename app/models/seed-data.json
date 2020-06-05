@@ -30,13 +30,17 @@
     "_model": "CheckIn",
     "checkIn1":
     {
-
+      "memberName": "Homer Simpson",
+      "beachName": "Rum Point",
+      "beachImage": "https://res.cloudinary.com/gracesfinn/image/upload/v1583260793/beach3_qs0cee.jpg",
       "groupSize": 4,
       "comment": "Quite busy this morning near Palms, would recommend staying away till 12pm to avoid any crowds."
     },
     "checkIn2":
     {
-
+      "memberName": "Marge Simpson",
+      "beachName": "Public Beach",
+      "beachImage": "https://res.cloudinary.com/gracesfinn/image/upload/v1583431960/afbdp93d6wh1tbsmoekz.jpg",
       "groupSize": 2,
       "comment": "Nice an quite today, hardly anyone here. Great to social distance"
     }

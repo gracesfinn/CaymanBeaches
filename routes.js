@@ -12,6 +12,7 @@ module.exports = [
     { method: 'GET', path: '/logout', config: Accounts.logout },
     { method: 'POST', path: '/signup', config: Accounts.signup },
     { method: 'POST', path: '/login', config: Accounts.login },
+    { method: 'GET', path: '/about', config: Accounts.about },
 
     { method: 'POST', path:  '/beach', config: Beaches.create },
 

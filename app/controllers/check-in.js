@@ -20,15 +20,23 @@ const CheckIns = {
             const id = request.auth.credentials.id;
             const user = await User.findById(id).lean();
             const data = request.payload;
+            const date = new Date();
+
 
             const rawBeach = request.payload.beach. split (',');
             const beach = await Beach.findOne({
             });
             const newCheckIn = new CheckIn({
                 member: user,
+                memberName: user.firstName + ' ' + user.lastName,
                 beach: beach,
+                beachName: beach.name,
+                beachImage: beach.imageMain,
                 groupSize: data.groupSize,
-                comment: data.comment
+                comment: data.comment,
+                date: date.toDateString(),
+
+
             });
             await newCheckIn.save();
             return h.redirect('/checkIn');

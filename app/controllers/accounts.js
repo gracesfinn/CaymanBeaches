@@ -76,6 +76,12 @@ const Accounts = {
             return h.view('login', { title: 'Login to Review' });
         }
     },
+    about: {
+        auth: false,
+        handler: function(request, h) {
+            return h.view('about', { title: 'About Us' });
+        }
+    },
     login: {
         auth: false,
         validate: {

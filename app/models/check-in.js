@@ -4,25 +4,20 @@ const Mongoose = require ('mongoose');
 const Schema = Mongoose.Schema;
 
 const checkInSchema = new Schema({
-  memberId: {
+  member: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  memberName:{
-    type: String,
+  memberName: String,
+  beach:{
+    type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  beachId:  {
-    type: Schema.Types.ObjectId,
-    ref: 'Beach',
-  },
-  beachName: {
-    type: ,
-    ref:'Beach'
-  },
+  beachImage: String,
+  beachName: String,
   groupSize: Number,
   comment: String,
-  date: { type: Date, default: Date.now }
+  date: String,
 });
 
 module.exports = Mongoose.model('CheckIn', checkInSchema);
