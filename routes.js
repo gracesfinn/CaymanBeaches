@@ -1,7 +1,7 @@
 'use strict';
 
 const Accounts = require('./app/controllers/accounts');
-const Reviews = require('./app/controllers/reviews');
+const CheckIns = require('./app/controllers/check-in');
 const Beaches = require('./app/controllers/beaches');
 
 
@@ -12,10 +12,15 @@ module.exports = [
     { method: 'GET', path: '/logout', config: Accounts.logout },
     { method: 'POST', path: '/signup', config: Accounts.signup },
     { method: 'POST', path: '/login', config: Accounts.login },
-    { method: 'POST', path: '/review', config: Reviews.review },
+    { method: 'GET', path: '/about', config: Accounts.about },
+
     { method: 'POST', path:  '/beach', config: Beaches.create },
 
-    //{ method: 'GET', path: '/home', config: Reviews.home },
+
+    { method: 'POST', path: '/checkIn', config: CheckIns.create },
+    { method: 'GET', path: '/checkIn', config: CheckIns.showCheckIns},
+
+
     { method: 'GET', path: '/home', config: Beaches.showBeaches },
     { method: 'GET', path: '/report', config: Beaches.showAdminBeaches },
 
@@ -44,5 +49,12 @@ module.exports = [
             }
         },
         options:{auth:false}
+    },
+    {
+        method: 'GET',
+        path: '/welcome/{user}',
+        handler: function (request, reply) {
+            return 'Welcome ' + request.params.user;
+        }
     }
     ];

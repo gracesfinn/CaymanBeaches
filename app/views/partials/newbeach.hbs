@@ -1,7 +1,6 @@
 <section class="ui raised segment">
     <div class="ui stacked segment">
         <h3>Add a New Beach</h3>
-
         <form action="/beach" method="POST">
             <div class="ui form">
                 <div class="field" >
@@ -14,7 +13,7 @@
                 </div>
                 <div class="field">
                     <label>Description</label>
-                    <textarea name="description" rows="2" placeholder="Max 20 words"></textarea>
+                    <textarea name="description" rows="2" placeholder="Max 50 words" maxlength="200"></textarea>
                 </div>
                 <div class="field" >
                     <label>Category</label>

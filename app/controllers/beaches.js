@@ -3,6 +3,7 @@
 const Beach = require('../models/beach');
 const User = require('../models/user');
 
+
 const Beaches = {
   create: {
     handler: async function(request, h) {
@@ -53,7 +54,7 @@ const Beaches = {
       const beach = await Beach.findById(id).lean();
       console.log(beach);
       return h.view("beach",{
-        title: 'beaches',
+        title: 'CheckIn',
         beach: beach
       });
     }

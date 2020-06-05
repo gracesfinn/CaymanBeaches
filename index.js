@@ -8,6 +8,7 @@ const Hapi = require('@hapi/hapi');
 
 const server = Hapi.server({
     port: process.env.PORT || 3000,
+    routes: { cors: true }
 });
 
 server.validator(require('@hapi/joi'))
@@ -41,6 +42,7 @@ async function init() {
     server.auth.default('session');
 
     server.route(require('./routes'));
+    server.route(require('./routes-api'));
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
 }
