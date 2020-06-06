@@ -6,7 +6,6 @@ const Joi = require('@hapi/joi');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-
 const Accounts = {
     index: {
         auth:false,
@@ -76,12 +75,6 @@ const Accounts = {
             return h.view('login', { title: 'Login to Review' });
         }
     },
-    about: {
-        auth: false,
-        handler: function(request, h) {
-            return h.view('about', { title: 'About Us' });
-        }
-    },
     login: {
         auth: false,
         validate: {
@@ -116,13 +109,9 @@ const Accounts = {
                     request.cookieAuth.set({ id: user.id });
                     return h.redirect('/report');
                 }
-                if (!await user.comparePassword(password)) {         // EDITED (next few lines)
-                    const message = 'Password mismatch';
-                    throw Boom.unauthorized(message);
-                } else {
-                    request.cookieAuth.set({ id: user.id });
-                    return h.redirect('/home');
-                }                                                    // END OF EDITED PART
+                user.comparePassword(password);
+                request.cookieAuth.set({ id: user.id });
+                return h.redirect('/home');
             } catch (err) {
                 return h.view('login', { errors: [{ message: err.message }] });
             }
@@ -132,6 +121,12 @@ const Accounts = {
         handler: function(request, h) {
             request.cookieAuth.clear();
             return h.redirect('/');
+        }
+    },
+    about: {
+        auth: false,
+        handler: function(request, h) {
+            return h.view('about', { title: 'About Us' });
         }
     },
     showSettings: {

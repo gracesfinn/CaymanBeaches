@@ -6,7 +6,7 @@ const Boom = require('@hapi/boom');
 const Beaches = {
 
   find: {
-    auth: false,
+    auth:false,
     handler: async function(request, h) {
       const beaches = await Beach.find();
       return beaches;

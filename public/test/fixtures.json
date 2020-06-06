@@ -86,5 +86,12 @@
       "groupSize": 2,
       "comment": "Nice an quite today, hardly anyone here. Great to social distance"
     }
-  ]
+  ],
+  "newCheckIn":
+  {
+    "member": "Lisa Simpson",
+    "beach": "Seven Mile Beach",
+    "groupSize": 2,
+    "comment": "Quite busy this morning near Palms, would recommend staying away till 12pm to avoid any crowds."
+  }
 }

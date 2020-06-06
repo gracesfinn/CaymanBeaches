@@ -5,7 +5,7 @@ const BeachService = require('./beaches-service');
 const fixtures = require('./fixtures.json');
 const _ = require('lodash');
 
-suite('Candidate API tests', function () {
+suite('Beaches API tests', function () {
 
   let beaches = fixtures.beaches;
   let newBeach = fixtures.newBeach;

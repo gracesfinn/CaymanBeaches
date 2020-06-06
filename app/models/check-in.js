@@ -11,7 +11,7 @@ const checkInSchema = new Schema({
   memberName: String,
   beach:{
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'Beach'
   },
   beachImage: String,
   beachName: String,
@@ -19,5 +19,9 @@ const checkInSchema = new Schema({
   comment: String,
   date: String,
 });
+
+checkInSchema.statics.removeCheckIn = function(id){
+  return this.findByIdAndDelete({ "_id":id})
+};
 
 module.exports = Mongoose.model('CheckIn', checkInSchema);
