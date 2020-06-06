@@ -49,6 +49,26 @@ const CheckIns = {
         beach: beach
       });
     }
+  },
+  showAdminCheckIns:{
+    handler: async function(request, h) {
+      const checkIns = await CheckIn.find().lean();
+      const beach = await Beach.find().lean;
+      console.log(checkIns);
+      return h.view("AdminCheckIn",{
+        title: 'Check In',
+        checkIns: checkIns,
+        beach: beach
+      });
+    }
+  },
+  deleteCheckIn:{
+    handler: async function(request, h) {
+      const id = request.params.id;
+      const checkIn = await CheckIn.findById(id).lean();
+      await CheckIn.removeCheckIn(id);
+      return h.redirect('/adminCheckIn');
+    }
   }
 
 

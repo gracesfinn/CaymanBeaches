@@ -18,6 +18,8 @@ module.exports = [
 
     { method: 'POST', path: '/checkIn/{id}', config: CheckIns.create },
     { method: 'GET', path: '/checkIn', config: CheckIns.showCheckIns},
+    { method: 'GET', path: '/adminCheckIn', config: CheckIns.showAdminCheckIns},
+    { method: 'GET', path: '/adminCheckIn/delete/{id}', config: CheckIns.deleteCheckIn},
 
 
     { method: 'GET', path: '/home', config: Beaches.showBeaches },

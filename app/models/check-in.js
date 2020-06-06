@@ -20,4 +20,8 @@ const checkInSchema = new Schema({
   date: String,
 });
 
+checkInSchema.statics.removeCheckIn = function(id){
+  return this.findByIdAndDelete({ "_id":id})
+};
+
 module.exports = Mongoose.model('CheckIn', checkInSchema);

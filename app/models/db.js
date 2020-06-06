@@ -6,8 +6,10 @@ const Mongoose = require('mongoose');
 
 Mongoose.set('useNewUrlParser', true);
 Mongoose.set('useUnifiedTopology', true);
+Mongoose.set('useFindAndModify', true);
 
 Mongoose.connect(process.env.db);
+
 const db = Mongoose.connection;
 
 db.on('error', function(err) {
