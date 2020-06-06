@@ -9,10 +9,8 @@ const beachSchema = new Schema({
   description: String,
   categories: [String],
   creator: String,
-  imageMain: String,
+  imageMain: String
 });
-
-
 
 beachSchema.statics.removeBeach = function(id){
   return this.findOneAndRemove({

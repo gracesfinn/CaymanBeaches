@@ -11,7 +11,7 @@ const checkInSchema = new Schema({
   memberName: String,
   beach:{
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'Beach'
   },
   beachImage: String,
   beachName: String,

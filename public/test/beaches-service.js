@@ -55,7 +55,7 @@ class BeachService {
   }
   async authenticate(user) {
     try {
-      const response = await axios.post('/api/users/authenticate', user);
+      const response = await axios.post(this.baseUrl+'/api/users/authenticate', user);
       return response.data;
     } catch (e) {
       return null;
@@ -98,7 +98,16 @@ class BeachService {
 
   async getCheckIns(id){
     try{
-      const response = await axios.get(this.baseUrl + '/api/beaches/' + id + '/checkIns');
+      const response = await axios.get(this.baseUrl + '/api/checkIns');
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async deleteAllCheckIns() {
+    try {
+      const response = await axios.delete(this.baseUrl + '/api/checkIns');
       return response.data;
     } catch (e) {
       return null;
