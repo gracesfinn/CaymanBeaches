@@ -3,14 +3,17 @@
 ![picture alt](https://res.cloudinary.com/gracesfinn/image/upload/v1582380553/F03CC176-500E-499F-A6FD-AB4A743CF36E_kaw58o.jpg)
 
 
+## About ##
+
+The purpose of this app has changed to help support the community of Cayman duign the Covid-19 crisis. Local can use the app to stay informed about the number of people on the beaches in their area. Users can check-in and report how they find the beaches in order to allow for safe beach visits. Users can then view check-ins of beaches before they leave to help ensure they can enjoy the beach whilst staying socially distant.
+
 This app allows **users** to
 
 - [x] sign up,
 - [x] log on and 
-- [x] view
-
-the most popular beaches in Grand Cayman. 
-- [ ] Future functions will allow users to comment and rate the different beaches the have visited. 
+- [x] view beaches
+- [x] check-in to beaches
+- [x] view other users' check-in
 
  - - - -
  
@@ -18,11 +21,13 @@ The **Admin** account for the app has the ability to do the follow to the beache
 - [x] Add with image
 - [x] Update
 - [x] Delete 
-- [ ] Future feauters will also include a Map View showing the loacations of the beaches. 
+
 
 Admin also has the abiliy to:
 - [x] View all registered users
 - [x] Delete users
+- [x] View all check ins
+- [x] Delet any check ins
 
 - - - -
 
