@@ -55,7 +55,7 @@ const CheckIns = {
       const checkIns = await CheckIn.find().lean();
       const beach = await Beach.find().lean;
       console.log(checkIns);
-      return h.view("AdminCheckIn",{
+      return h.view("adminCheckIn",{
         title: 'Check In',
         checkIns: checkIns,
         beach: beach
