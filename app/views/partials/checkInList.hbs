@@ -1,0 +1,73 @@
+<h2 class="ui center aligned icon header">
+    <i class="thumbtack icon"></i>
+    Check Ins
+</h2>
+
+{{#each checkIns}}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <section class="ui raised segment">
+
+        <div class="ui grid">
+            <aside class="six wide column">
+
+
+                <img src="{{beachImage}}" class="ui large rounded image">
+                <div class="w3-display-topmiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                    <h4><b>{{beachName}}</b> </h4>
+
+                </div>
+            </aside>
+            <article class="eight wide column">
+
+                <table class="ui very basic collapsing celled table">
+                    <tbody>
+
+                    <tr>
+                        <td>
+                            <h4  class="item">
+                                <i class="calendar icon"></i>
+                            </h4>
+                        </td>
+                        <td>
+                            {{date}}{{time}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4  class="item">
+                                <i class="users icon"></i>
+                            </h4>
+                        </td>
+                        <td>
+                            Group Size: {{groupSize}}
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <h4  class="item">
+                                <i class="comments outline icon"></i>
+                            </h4>
+                        </td>
+                        <td>
+                            {{comment}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4  class="item">
+                                <i class="user circle outline icon"></i>
+                            </h4>
+                        </td>
+                        <td>
+                            {{memberName}}
+                        </td>
+                    </tr>
+                    <tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </section>
+
+{{/each}}
