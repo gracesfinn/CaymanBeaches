@@ -28,7 +28,7 @@
     "dotenv": "^8.2.0",
     "handlebars": "^4.7.3",
     "heroku": "^7.39.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mais-mongoose-seeder": "^1.0.7",
     "mongoose": "^5.9.1"
   },
